@@ -1,6 +1,4 @@
 const Account = require("../models/account");
-const bcrypt = require("bcrypt");
-const saltRound = 10;
 
 class AccountController {
   //[GET] Sign In    async signupPost(req, res, next) {
