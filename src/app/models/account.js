@@ -7,7 +7,7 @@ const AccountSchema = new Schema({
   username: { type: String, unique: true, required: true },
   email: { type: String, require: true },
   password: { type: String, require: true },
-  phone: { type: Number, require: true },
+  phone: { type: String, require: true },
 });
 
 AccountSchema.pre("save", async function (next) {
