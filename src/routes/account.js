@@ -31,8 +31,11 @@ router.post(
   accountController.messages
 );
 router.get("/user/:userId", accountController.usersId);
-router.get;
-router.post;
-router.get;
-router.get;
+router.get("/messages/:senderId/:recepientId", accountController.groupChat);
+router.post("/deleteMessages", accountController.deleteMessages);
+router.get(
+  "/friend-requests/sent/:userId",
+  accountController.friendSendRequest
+);
+router.get("/friends/:userId", accountController.friendId);
 module.exports = router;
