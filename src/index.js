@@ -6,10 +6,14 @@ const route = require("./routes");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const cors = require("cors");
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+
 //connect to mongodb
 db.connect();
 //middlewares
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   session({
@@ -18,6 +22,8 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(cors());
+app.use(passport.initialize());
 //Follow a server status
 // app.use(morgan("combined"));
 //Router
